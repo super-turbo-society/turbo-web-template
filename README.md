@@ -8,7 +8,7 @@ In the "Steps" section, replace `my-game` with the path to wherever your actual 
 
 > ℹ️ You should run all these commands from the project root directory.
 
-1. Build your game
+#### 1. Build your game
 
 From the `my-game` dir run:
 
@@ -16,7 +16,7 @@ From the `my-game` dir run:
 cd my-game && cargo build -r --target wasm32-unknown-unknown
 ```
 
-2. Copy the wasm file to the root of the `www` dir
+#### 2. Copy the wasm file to the root of the `www` dir
 
 ```sh
 cp my-game/target/wasm32-unknown-unknown/release/my_game.wasm www/my_game.wasm
@@ -24,7 +24,7 @@ cp my-game/target/wasm32-unknown-unknown/release/my_game.wasm www/my_game.wasm
 
 > Note that the wasm binary will replace dashes in the package name with underscores.
 
-3. Copy the sprites from `my-game` to www
+#### 3. Copy the sprites from `my-game` to www
 
 Be extra careful not to delete the sprites in your project dir!
 
@@ -32,11 +32,13 @@ Be extra careful not to delete the sprites in your project dir!
 rm -rf www/sprites && cp -r my-game/sprites www/sprites
 ```
 
-4. Edit your game configuration in `www/main.js`
+#### 4. Edit your game configuration in `www/main.js` and `www/solana.js`
 
-The most important parts are the wasm source, resolution, and the sprites.
+The most important parts are the wasm source, resolution, and the sprites in `www/solana.js`.
 
-5. Update `www/manifest.json`, `www/favicon.ico`, `www/logo_192x192.png`, the meta tags in `www/index.html`, etc
+If you are using solana features, be sure to update the rpc urls in `www/solana.js`.
+
+#### 5. Update `www/manifest.json`, `www/favicon.ico`, `www/logo_192x192.png`, the meta tags in `www/index.html`, etc
 
 This is how you can customize your game's appearance as a PWA.
 
