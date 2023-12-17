@@ -27,6 +27,29 @@ const SPRITES = [
 
 /**************************************************/
 
+// This proxy prevents WebAssembly.LinkingError from being thrown
+// prettier-ignore
+window.createWasmImportsProxy = (target = {}) => {
+    console.log("imports", target);
+    return new Proxy(target, {
+      get: (target, namespace) => {
+          // Stub each undefined namespace with a Proxy
+          target[namespace] = target[namespace] ?? new Proxy({}, {
+              get: (_, prop) => {
+                  // Generate a sub function for any accessed property
+                  return (...args) => {
+                      console.log(`Calling ${namespace}.${prop} with arguments:`, args);
+                      // Implement the actual function logic here
+                  };
+              }
+          });
+          return target[namespace];
+        }
+    })
+  };
+
+/**************************************************/
+
 try {
   // Initalize Turbo's WASM runtime
   await initTurbo();
@@ -79,8 +102,6 @@ try {
     },
     config: {
       resolution: RESOLUTION,
-      tileSize: [16, 16],
-      fps: 60,
     },
   });
 } catch (err) {
