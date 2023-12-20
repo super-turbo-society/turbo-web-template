@@ -34,7 +34,7 @@ rm -rf www/sprites && cp -r my-game/sprites www/sprites
 
 #### 4. Edit your game configuration in `www/main.js` and `www/solana.js`
 
-The most important parts are the wasm source, resolution, and the sprites in `www/solana.js`.
+The most important parts are the wasm source, resolution, and the sprites in `www/main.js`.
 
 If you are using solana features, be sure to update the rpc urls in `www/solana.js`.
 
