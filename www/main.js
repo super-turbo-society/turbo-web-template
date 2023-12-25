@@ -30,7 +30,7 @@ const SPRITES = [
 // This proxy prevents WebAssembly.LinkingError from being thrown
 // prettier-ignore
 window.createWasmImportsProxy = (target = {}) => {
-    console.log("imports", target);
+    console.log(target);
     return new Proxy(target, {
       get: (target, namespace) => {
           // Stub each undefined namespace with a Proxy
