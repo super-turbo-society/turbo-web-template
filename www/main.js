@@ -48,6 +48,11 @@ window.createWasmImportsProxy = (target = {}) => {
     })
   };
 
+window.turboSolGetUser = window.turboSolGetUser ?? (() => {});
+window.turboSolGetAccount = window.turboSolGetAccount ?? (() => {});
+window.turboSolSignAndSendTransaction =
+  window.turboSolSignAndSendTransaction ?? (() => {});
+
 /**************************************************/
 
 try {
