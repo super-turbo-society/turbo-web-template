@@ -1,3 +1,4 @@
+const solana = window.solana;
 const web3 = window.solanaWeb3;
 
 /**************************************************/
