@@ -48,7 +48,7 @@ window.createWasmImportsProxy = (target = {}) => {
     })
   };
 
-window.turboSolGetUser = window.turboSolGetUser ?? (() => {});
+window.turboSolUser = window.turboSolUser ?? (() => {});
 window.turboSolGetAccount = window.turboSolGetAccount ?? (() => {});
 window.turboSolSignAndSendTransaction =
   window.turboSolSignAndSendTransaction ?? (() => {});
