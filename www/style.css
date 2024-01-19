@@ -45,6 +45,7 @@ button {
   justify-content: center;
   align-items: center;
   background: #202124;
+  user-select: none;
 }
 
 canvas {
