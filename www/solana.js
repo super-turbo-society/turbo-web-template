@@ -1,4 +1,4 @@
-const solana = window.solana;
+const solana = window.solana ?? window.xnft?.solana;
 const web3 = window.solanaWeb3;
 
 /**************************************************/
